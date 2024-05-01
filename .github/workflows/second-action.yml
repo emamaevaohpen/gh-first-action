@@ -6,7 +6,6 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - run: pip install mypy
-      - run: mypy src tests --install-types --non-interactive --ignore-missing-imports --implicit-optional --disallow-untyped-defs
-
+      - run: pip install pytest
+      - run: pytest
 
