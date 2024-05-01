@@ -6,11 +6,7 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - name: Install Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-          cache: 'pip' # caching pip dependencies
-      - run: pip install -r requirements.txt
+      - run: pip install mypy
+      - run: mypy src tests --install-types --non-interactive --ignore-missing-imports --implicit-optional --disallow-untyped-defs
 
 
